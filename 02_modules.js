@@ -1,14 +1,14 @@
 // Node uses CommonJS library under the hood. Every file in Node is a module(by default).
 // Modules -> nothing but encapsulated code (only share minimum)
 
-const john = "John";
-const peter = "Peter";
-const secret = "Super Secret";
+const userNames = require("./02_01_names");
+const greetUser = require("./02_02_utils");
 
-const greetUser = (firstName) => {
-  console.log(firstName);
-};
+// console.log(userNames);
 
-greetUser(john);
-greetUser(peter);
+greetUser(userNames.john);
+greetUser(userNames.peter);
 greetUser("Susan");
+
+// This won't work as secret variable is not exported.
+// greetUser(userNames.secret);
