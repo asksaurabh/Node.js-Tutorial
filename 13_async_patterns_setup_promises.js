@@ -1,3 +1,4 @@
+// read file asynchronously using promises.
 const { readFile } = require("fs");
 
 const getText = (filePath) => {
