@@ -13,7 +13,7 @@ app.get("/api/products", (req, res) => {
     const { id, name, image } = product;
     return { id, name, image };
   });
-  res.send(newProducts);
+  res.json(newProducts);
 });
 
 app.listen(5000, () => {
