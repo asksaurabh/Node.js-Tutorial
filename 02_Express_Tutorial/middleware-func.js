@@ -6,6 +6,20 @@ const logger = (req, res, next) => {
   next();
 };
 
+const authorize = (req, res, next) => {
+  const { user } = req.query;
+  if (user === "admin") {
+    req.user = {
+      userName: "admin",
+      id: 1,
+    };
+    next();
+  } else {
+    res.status(401).send("Unauthorized");
+  }
+};
+
 module.exports = {
   logger,
+  authorize,
 };
